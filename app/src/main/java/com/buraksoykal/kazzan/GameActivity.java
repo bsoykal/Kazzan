@@ -1,46 +1,24 @@
 package com.buraksoykal.kazzan;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.buraksoykal.kazzan.helpers.SharedPrefHelper;
 
-
-public class SplashActivity extends ActionBarActivity {
+public class GameActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
-        Intent gameIntent = new Intent(SplashActivity.this,GameActivity.class);
-
-
-
-        if(!SharedPrefHelper.hasTutorialShown(this) && !SharedPrefHelper.isUserLoggedIn(this)){
-            startService(new Intent(this, KazzanService.class));
-            gameIntent.putExtra("gamemode","tutorial");
-        }
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        startActivity(gameIntent);
-        finish();
-
+        setContentView(R.layout.activity_game);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_splash, menu);
+        getMenuInflater().inflate(R.menu.menu_game, menu);
         return true;
     }
 

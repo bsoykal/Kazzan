@@ -18,10 +18,15 @@
         </activity>
 
         <service
-            android:name=".HakCounter"
+            android:name=".KazzanService"
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/title_activity_game" >
+        </activity>
     </application>
 
 </manifest>

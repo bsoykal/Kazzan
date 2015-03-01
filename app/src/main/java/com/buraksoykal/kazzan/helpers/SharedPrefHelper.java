@@ -1,4 +1,4 @@
-package com.buraksoykal.kazzan;
+package com.buraksoykal.kazzan.helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
