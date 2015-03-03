@@ -4,14 +4,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.buraksoykal.kazzan.Entity.MessageData;
+import com.buraksoykal.kazzan.helpers.Publisher;
 
 
 public class GameActivity extends ActionBarActivity {
 
+    private Button timeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        initUI();
     }
 
 
@@ -35,5 +42,17 @@ public class GameActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initUI(){
+        timeButton = (Button)findViewById(R.id.timeButton);
+        timeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MessageData msgData = new MessageData();
+                msgData.setData("starttimer");
+                Publisher.sendMessageToService(GameActivity.this,msgData);
+            }
+        });
     }
 }

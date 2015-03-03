@@ -21,9 +21,10 @@ public class SplashActivity extends ActionBarActivity {
 
 
         if(!SharedPrefHelper.hasTutorialShown(this) && !SharedPrefHelper.isUserLoggedIn(this)){
-            startService(new Intent(this, KazzanService.class));
+
             gameIntent.putExtra("gamemode","tutorial");
         }
+        startService(new Intent(this, KazzanService.class));
 
         try {
             Thread.sleep(10000);

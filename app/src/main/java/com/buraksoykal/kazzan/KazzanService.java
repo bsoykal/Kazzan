@@ -50,22 +50,26 @@ public class KazzanService extends Service {
     }
 
     public void startTimer(long time){
+        Log.i(TAG,"Timer STARTED");
         CountDownTimer timer = new CountDownTimer(time,1000) {
+
+
             @Override
             public void onTick(long millisUntilFinished) {
-
+                Log.i(TAG,"MillisFinished :: "+millisUntilFinished);
             }
 
             @Override
             public void onFinish() {
-
+                Log.i(TAG,"Time is up");
             }
         };
+        timer.start();
     }
 
     public class ServiceBroadcastReceiver extends BroadcastReceiver {
 
-        private static final String TAG = "ServiceBroadcastReceiver";
+        private static final String TAG = "ServiceBroadcstReceiver";
         private KazzanService service;
 
         public ServiceBroadcastReceiver(KazzanService service){
@@ -74,13 +78,14 @@ public class KazzanService extends Service {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-
+                Log.i(TAG,"BroadcastReceived");
             MessageData data;
 
             data = (MessageData) intent.getSerializableExtra("message");
 
             if(data.getData().equals("starttimer")){
-                service.startTimer(1800000);
+                //service.startTimer(1800000);
+                service.startTimer(30000);
             }
 
         }
