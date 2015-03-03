@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#FFCCCCCC"
+	android:orientation="vertical"
+	tools:context=".ScrapeActivity" >
+
+    <RelativeLayout
+        android:layout_width="183dp"
+        android:layout_height="183dp">
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/burger"/>
+        <com.buraksoykal.kazzan.DrawingView
+            android:id="@+id/drawing"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:background="#FFFFFFFF" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="183dp"
+        android:layout_height="211dp">
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/burger"/>
+        <com.buraksoykal.kazzan.DrawingView
+            android:id="@+id/drawing2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:background="#FFFFFFFF" />
+
+    </RelativeLayout>
+
+</LinearLayout>

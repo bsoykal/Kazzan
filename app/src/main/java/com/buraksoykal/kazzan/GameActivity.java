@@ -1,5 +1,6 @@
 package com.buraksoykal.kazzan;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -52,6 +53,9 @@ public class GameActivity extends ActionBarActivity {
                 MessageData msgData = new MessageData();
                 msgData.setData("starttimer");
                 Publisher.sendMessageToService(GameActivity.this,msgData);
+
+                Intent i = new Intent(GameActivity.this,ScrapeActivity.class);
+                startActivity(i);
             }
         });
     }
